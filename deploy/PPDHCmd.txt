@@ -1,0 +1,61 @@
+Push Pull from DockHub
+
+
+-sudo su
+
+-apt update
+
+-apt install docker.io -y
+
+-docker –version
+
+-vi Dockerfile-->
+FROM ubuntu
+
+RUN apt update
+RUN apt install apache2 -y
+RUN apt install git -y
+RUN rm -rf /var/www/html/*
+RUN git clone https://github.com/labsyntaxbit/apachewebsite /var/www/html/
+CMD apache2ctl -D FOREGROUND
+-docker build –t myimg .
+
+-docker images
+
+-docker login –u atharva01
+
+-passward:
+
+-docker tag myimg atharva01/myimg
+
+-docker images
+
+-docker push atharva01/myimg
+
+
+Client-docker
+
+-sudo su
+
+-apt update
+
+-apt install docker.io -y
+
+-docker pull atharva/myimg
+
+-docker images
+
+DockerHub
+
+-login
+
+-create tocken with read, write, deleate
+
+-copy command, passward
+
+-check repo
+
+
+
+
+
